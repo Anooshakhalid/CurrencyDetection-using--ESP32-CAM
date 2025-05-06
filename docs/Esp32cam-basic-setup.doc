@@ -1,0 +1,94 @@
+**ESP32-CAM Basic Serial Output Setup Document**
+
+---
+
+**1. Objective:**
+To verify the proper working of the ESP32-CAM by displaying basic serial output messages using Arduino IDE.
+
+---
+
+**2. Required Components:**
+
+* ESP32-CAM module
+* FTDI232 USB-to-Serial adapter
+* Jumper wires
+* Arduino IDE with ESP32 board support installed
+
+---
+
+**3. Wiring Connections:**
+
+| ESP32-CAM Pin | FTDI232 Pin              |
+| ------------- | ------------------------ |
+| U0R (RX)      | TXD                      |
+| U0T (TX)      | RXD                      |
+| GND           | GND                      |
+| VCC (5V)      | VCC                      |
+| IO0           | GND (only during upload) |
+
+
+---
+
+**4. Arduino IDE Settings:**
+
+* **Board:** AI Thinker ESP32-CAM
+* **Port:** Select your FTDI COM port
+* **Baud Rate:** 115200
+* **Upload Speed:** 115200 or 921600
+* **Flash Mode:** DIO
+
+Go File/Preferences -> Paste this : https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json
+
+---
+
+**5. Upload Instructions:**
+
+1. Connect IO0 to GND to enter flash mode.
+2. Click on Upload in the Arduino IDE.
+3. Once the upload completes, disconnect IO0 from GND.
+4. Disconnect the jumper wire of vcc for a while to reset and again connect it if Esp32cam doesn't have reset button.
+
+---
+
+**6. Sample Code:**
+
+```cpp
+void setup() {
+  Serial.begin(115200);
+  delay(1000);
+  Serial.println("ESP32-CAM is alive!");
+}
+
+void loop() {
+  Serial.println("Running...");
+  delay(2000); 
+}
+```
+
+---
+
+**7. Expected Output in Serial Monitor:**
+
+```
+ESP32-CAM is alive!
+Running...
+Running...
+Running...
+...
+```
+
+---
+
+**8. Notes:**
+
+* If you do not see output, recheck the COM port, wiring, and power source.
+* Do not leave IO0 connected to GND after uploading; it will prevent normal boot.
+
+---
+
+---
+
+**10. Conclusion:**
+This setup confirms that the ESP32-CAM is functional and capable of sending serial data. This test is essential before attempting more complex camera or WiFi functionalities.
+
+---
