@@ -38,7 +38,7 @@ To develop a real-time edge AI solution using the **ESP32-CAM** that can detect 
 
 | Hardware Circuit | Rs. 20 Detected | Rs. 50 Detected | No Object |
 |----------|-----------------|----------------|---------------|
-| ![OLED Display](images/img_1.jpg) | ![20 Pkr](images/img_3.jpg) | ![50 Pkr](images/img_4.jpg) | ![No Object](images/img_2.jpg) |
+| ![OLED Display](images/img_1.png) | ![20 Pkr](images/img_3.jpg) | ![50 Pkr](images/img_4.jpg) | ![No Object](images/img_2.jpg) |
 
 
 ## Future Implementations
